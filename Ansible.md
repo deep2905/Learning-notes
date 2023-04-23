@@ -54,7 +54,7 @@ ubuntu for ubuntu OS
 ```
 sudo -s
 ```
-- [ ] Enable Password Authentication 
+- [ ] Enable Password #PermitRootLogin prohibit-password 
 
 ```
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
@@ -106,7 +106,7 @@ wget https://raw.githubusercontent.com/ansible/ansible/stable-2.9/examples/ansib
 -  [ ] Start with Local host for test
 
 ```
-ansible local -m ping --connection=local
+ansible localhost  -m ping --connection=local
 ```
 - [ ] Create an inventory file
 
@@ -121,7 +121,7 @@ Ip-address
 ```
 ansible test -m ping 
 ```
-- [ ] Add below line to /etc/ansible/ansible.cfg
+- [ ] Add below line to /etc/ansible/ansible.cfg.  after [defaults]
 
 ```
 vi /etc/ansible/ansible.cfg
